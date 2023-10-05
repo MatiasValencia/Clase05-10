@@ -1,3 +1,5 @@
+package ejemplo1;
+
 public class LibroNoFiccion extends Libro{
     private boolean biografico;
     private String nombreBiografiado;

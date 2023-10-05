@@ -1,3 +1,5 @@
+package ejemplo1;
+
 public class LibroFiccion extends Libro {
     private String sinopsis;
     private int anio;

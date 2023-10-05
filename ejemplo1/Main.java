@@ -1,3 +1,5 @@
+package ejemplo1;
+
 public class Main {
     public static void main(String[] args) {
         Usuario usuario1 = new Usuario("Pedro", 73892647, "7938627-6");

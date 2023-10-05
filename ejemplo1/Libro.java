@@ -1,3 +1,5 @@
+package ejemplo1;
+
 public class Libro {
     private String nombre;
     private String autor;

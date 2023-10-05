@@ -1,3 +1,5 @@
+package ejemplo1;
+
 public class Bibliotecario extends Usuario {
     public Bibliotecario(String nombre, int telefono, String rut) {
         super(nombre, telefono, rut);
