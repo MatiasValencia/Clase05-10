@@ -27,37 +27,45 @@ public class Entrenador {
     public void sumarDinero(int dinero) {this.dinero = this.dinero + dinero;}
     public void restarDinero(int dinero) {this.dinero = this.dinero - dinero;}
 
-    public void capturarPokemon(int countPokemonActivos) {
+    public void capturarPokemon(Pokemon pokemon) {
         for(int i = 0; i < 6; i++) {
             if(countPokemonActivos == i) {
-                this.pokemonActivos[i] = null;
-            } else {
-                System.out.println("No puedes capturar mas Pokemon");
+                pokemonActivos[i] = pokemon;
+                countPokemonActivos ++;
+                return;
             }
         }
-    }
-
-    public void guardarPokemon(int countPokemonGuardados) {
-        for(int i = 0; i < 100; i++) {
-            if(countPokemonGuardados == i) {
-                this.pokemonGuardados[i] = null;
+        for (int j = 0; j < 100; j++) {
+            if(countPokemonGuardados == j) {
+                pokemonGuardados[j] = pokemon;
+                countPokemonGuardados ++;
+                System.out.println("Tu pokemon se ha guardado");
             } else {
                 System.out.println("No puedes guardar mas Pokemon");
             }
         }
     }
 
-    public void soltarPokemon(int countPokemonGuardados, int countPokemonActivos) {
+    public void guardarPokemon(Pokemon pokemon) {
         for(int i = 0; i < 100; i++) {
-            if(countPokemonGuardados == i && countPokemonActivos < 6) {
-                this.pokemonGuardados[i] = this.pokemonActivos[countPokemonActivos];
-                this.pokemonActivos[countPokemonActivos] = null;
-                countPokemonActivos++;
+            if(countPokemonGuardados == i) {
+                pokemonGuardados[i] = pokemon;
+                countPokemonGuardados ++;
             } else {
-                System.out.println("No puedes soltar mas Pokemon");
+                System.out.println("No puedes guardar mas Pokemon");
             }
         }
     }
+
+    public void soltarPokemon(Pokemon pokemon) {
+        for(int i = 0; i < 6; i++) {
+            if(countPokemonActivos == i) {
+                pokemonActivos[i] = null;
+                countPokemonActivos --;
+            }
+        }
+    }
+
     public void verPokemonActivos() {
         System.out.print(pokemonActivos);
     }
