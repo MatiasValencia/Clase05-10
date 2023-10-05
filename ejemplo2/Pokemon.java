@@ -7,6 +7,7 @@ public class Pokemon {
     private String tipo1;
     private String tipo2;
     private int exp;
+    private int hp;
 
     // Constructor
     public Pokemon(String nombre, String tipo1, String tipo2) {
@@ -15,6 +16,7 @@ public class Pokemon {
         this.tipo1 = tipo1;
         this.tipo2 = tipo2;
         this.exp = 0;
+        this.hp = 100;
     }
     // Metodos
     // Getters
@@ -23,6 +25,7 @@ public class Pokemon {
     public String getTipo1() {return tipo1;}
     public String getTipo2() {return tipo2;}
     public int getEXP() {return exp;}
+    public int getHP() {return hp;}
 
     // Setter
     public void setNombre(String nombre) {this.nombre = nombre;}
@@ -30,10 +33,19 @@ public class Pokemon {
     // Customers o Reglas de Negocio
     public void subirNivel() {this.nivel++;}
     public void aniadirEXP(int exp) {
-        if (exp >= 100) {
+        while (exp >= 100) {
             subirNivel();
             exp = exp - 100;
         }
     }
+    public void carameloRaro() {
+        subirNivel();
+        exp = 0;
+    }
 
+    public void estadoActual() {
+        if(hp <= 0) {
+            System.out.println("El Pokemon esta debilitado");
+        }
+    }
 }
